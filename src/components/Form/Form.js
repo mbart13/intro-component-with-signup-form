@@ -1,60 +1,64 @@
+// @ts-nocheck
 import React from 'react'
+import { useForm } from 'react-hook-form'
 
 import FormField from 'components/FormField/FormField'
-import styled from 'styled-components'
+import { Wrapper, CTAWrapper, FormWrapper } from './Form.styles'
 import Button from 'components/Button/Button'
 
-const Wrapper = styled.section`
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
-    flex: 1 0 50%;
-  }
-`
-const CTAWrapper = styled.div`
-  text-align: center;
-
-  p {
-    background-color: ${({ theme }) => theme.colors.blue};
-    padding: 1.375rem 4rem;
-    border-radius: 0.625rem;
-    box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.15);
-    font-size: 0.9375rem;
-    line-height: 1.7;
-    margin-bottom: 1.4rem;
-  }
-`
-
-const FormWrapper = styled.form`
-  background-color: ${({ theme }) => theme.colors.white};
-  padding: 1.5rem;
-  border-radius: ${({ theme }) => theme.borderRadius};
-  box-shadow: 0 8px rgba(0, 0, 0, 0.15);
-
-  p {
-    color: ${({ theme }) => theme.colors.grayishBlue};
-    font-size: 0.6875rem;
-    margin-top: 0.8rem;
-    text-align: center;
-    padding: 0 1rem;
-
-    a {
-      color: ${({ theme }) => theme.colors.red};
-      font-weight: ${({ theme }) => theme.fontWeights.bold};
-      text-decoration: none;
-    }
-  }
-`
-
 const Form = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
+
+  const onSubmit = () => {
+    return
+  }
+
   return (
     <Wrapper>
-      <CTAWrapper>
-        <p>Try it free 7 days then $20/mo. thereafter</p>
-      </CTAWrapper>
-      <FormWrapper>
-        <FormField type="text" label="First Name" />
-        <FormField type="text" label="Last Name" />
-        <FormField type="email" label="Email Address" />
-        <FormField type="password" label="Password" />
+      <CTAWrapper>Try it free 7 days then $20/mo. thereafter</CTAWrapper>
+      <FormWrapper onSubmit={handleSubmit(onSubmit)} noValidate>
+        <FormField
+          {...register('firstName', { required: 'First Name cannot be empty' })}
+          type="text"
+          placeholder="First Name"
+          aria-label="First Name"
+          autoComplete="off"
+          errors={errors.firstName}
+        />
+        <FormField
+          {...register('lastName', { required: 'Last Name cannot be empty' })}
+          type="text"
+          placeholder="Last Name"
+          aria-label="Last Name"
+          autoComplete="off"
+          errors={errors.lastName}
+        />
+        <FormField
+          {...register('email', {
+            required: 'email cannot be empty',
+            pattern: {
+              value: /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/,
+              message: 'Looks like this is not an email',
+            },
+          })}
+          placeholder="Email Address"
+          type="email"
+          aria-label="Email Address"
+          autoComplete="off"
+          errors={errors.email}
+        />
+        <FormField
+          {...register('password', { required: 'Password cannot be empty' })}
+          placeholder="Password"
+          type="password"
+          aria-label="Password"
+          autoComplete="off"
+          errors={errors.password}
+        />
         <Button>Claim your free trial</Button>
         <p>
           By clicking the button, you are agreeing to our{' '}

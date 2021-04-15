@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Footer from 'components/Footer/Footer'
-import SignUpPage from 'views/sign-up-page'
+import SignUpPage from 'views/SignUpPage'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from 'styles/GlobalStyles'
 import styled from 'styled-components'
