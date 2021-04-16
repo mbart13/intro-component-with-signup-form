@@ -11,8 +11,8 @@ export const InputWrapper = styled.div`
     position: absolute;
     background-image: url(${iconError});
     background-size: cover;
-    height: 27px;
-    width: 27px;
+    height: 1.687rem;
+    width: 1.687rem;
     top: 0;
     transform: translateY(50%);
     right: 2rem;

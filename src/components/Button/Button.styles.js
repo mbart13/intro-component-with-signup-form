@@ -20,5 +20,6 @@ export const StyledButton = styled.button`
 
   :focus {
     outline: none;
+    background-color: ${({ theme }) => lighten(0.1, theme.colors.green)};
   }
 `

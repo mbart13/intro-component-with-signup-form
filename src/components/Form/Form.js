@@ -19,14 +19,20 @@ const Form = () => {
 
   return (
     <Wrapper>
-      <CTAWrapper>Try it free 7 days then $20/mo. thereafter</CTAWrapper>
-      <FormWrapper onSubmit={handleSubmit(onSubmit)} noValidate>
+      <CTAWrapper>
+        <span>Try it free 7 days</span> then $20/mo. thereafter
+      </CTAWrapper>
+      <FormWrapper
+        onSubmit={handleSubmit(onSubmit)}
+        noValidate
+        autoComplete="off"
+      >
         <FormField
           {...register('firstName', { required: 'First Name cannot be empty' })}
           type="text"
           placeholder="First Name"
           aria-label="First Name"
-          autoComplete="off"
+          aria-invalid={errors.firstName ? 'true' : 'false'}
           errors={errors.firstName}
         />
         <FormField
@@ -34,7 +40,7 @@ const Form = () => {
           type="text"
           placeholder="Last Name"
           aria-label="Last Name"
-          autoComplete="off"
+          aria-invalid={errors.lastName ? 'true' : 'false'}
           errors={errors.lastName}
         />
         <FormField
@@ -48,15 +54,25 @@ const Form = () => {
           placeholder="Email Address"
           type="email"
           aria-label="Email Address"
-          autoComplete="off"
+          aria-invalid={errors.email ? 'true' : 'false'}
           errors={errors.email}
         />
         <FormField
-          {...register('password', { required: 'Password cannot be empty' })}
+          {...register('password', {
+            required: 'Password cannot be empty',
+            minLength: {
+              value: 6,
+              message: 'Password needs to have at least 6 characters',
+            },
+            maxLength: {
+              value: 256,
+              message: 'Password cannot have more thant 256 characters',
+            },
+          })}
           placeholder="Password"
           type="password"
           aria-label="Password"
-          autoComplete="off"
+          aria-invalid={errors.password ? 'true' : 'false'}
           errors={errors.password}
         />
         <Button>Claim your free trial</Button>

@@ -1,4 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
+import bgMobile from 'assets/images/bg-intro-mobile.png'
+import bgDesktop from 'assets/images/bg-intro-desktop.png'
 
 export const GlobalStyles = createGlobalStyle`
   /* Box sizing rules */
@@ -80,7 +82,32 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
+    .sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+  }
+
   body {
     font-family: 'Poppins', sans-serif;
+
+    ::after{
+      position: absolute;
+      width:0;
+      height:0;
+      overflow: hidden;
+      z-index: -1;
+      content:
+      url(${bgMobile})
+      url(${bgDesktop});
+    }
   }
 `

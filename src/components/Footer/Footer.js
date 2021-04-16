@@ -7,6 +7,10 @@ const Wrapper = styled.footer`
   text-align: center;
   padding-top: 1rem;
   font-size: 0.7rem;
+
+  a:focus {
+    border: 2px dotted ${({ theme }) => theme.colors.green};
+  }
 `
 
 const Footer = () => (

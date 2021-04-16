@@ -4,6 +4,9 @@ export const Wrapper = styled.div`
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
     flex: 1 0 50%;
   }
+  span {
+    font-weight: ${({ theme }) => theme.fontWeights.bold};
+  }
 `
 export const CTAWrapper = styled.p`
   text-align: center;
@@ -34,5 +37,9 @@ export const FormWrapper = styled.form`
     color: ${({ theme }) => theme.colors.red};
     font-weight: ${({ theme }) => theme.fontWeights.bold};
     text-decoration: none;
+
+    :focus {
+      border: 2px dotted ${({ theme }) => theme.colors.green};
+    }
   }
 `
