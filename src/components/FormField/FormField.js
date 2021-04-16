@@ -11,7 +11,6 @@ const FormField = React.forwardRef((props, ref) => {
       {props['errors'] && (
         <>
           <p className="errorMessage">{props['errors']['message']}</p>
-          <span className="sr-only">{props['errors']['message']}</span>
         </>
       )}
     </InputWrapper>
