@@ -4,7 +4,6 @@ import { InputWrapper, StyledInput } from './FormField.styles'
 
 const FormField = React.forwardRef((props, ref) => {
   const isError = () => (props['errors'] ? 'isError' : '')
-  console.log(props)
   return (
     <InputWrapper className={isError()}>
       <StyledInput
