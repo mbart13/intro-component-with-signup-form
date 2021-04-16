@@ -45,7 +45,7 @@ const Form = () => {
         />
         <FormField
           {...register('email', {
-            required: 'email cannot be empty',
+            required: 'Email cannot be empty',
             pattern: {
               value: /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/,
               message: 'Looks like this is not an email',
