@@ -13,6 +13,7 @@ This is a solution to the [Intro component with sign up form challenge on Fronte
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
+- [Setup](#setup)
 - [Author](#author)
 
 
@@ -88,6 +89,13 @@ I'd like to learn more about accessibility.
 
 - [React Hook Form](https://react-hook-form.com/) - Really good documentation.
 
+
+## Setup
+To run this project, install it locally using npm:
+
+```
+npm install && npm start
+```
 
 ## Author
 
