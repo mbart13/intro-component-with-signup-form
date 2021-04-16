@@ -13,11 +13,9 @@ const FormField = React.forwardRef((props, ref) => {
         aria-describedby={props['name']}
       />
       {props['errors'] && (
-        <>
-          <p id={props['name']} className="errorMessage" aria-live="polite">
-            {props['errors']['message']}
-          </p>
-        </>
+        <p id={props['name']} className="errorMessage" aria-live="polite">
+          {props['errors']['message']}
+        </p>
       )}
     </InputWrapper>
   )
