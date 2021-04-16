@@ -36,7 +36,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [go here](https://intro-component-with-signup-form-mbart13.vercel.app/)
+[Live Site URL](https://intro-component-with-signup-form-mbart13.vercel.app/)
 
 ## My process
 
