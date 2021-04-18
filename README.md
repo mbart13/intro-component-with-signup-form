@@ -55,9 +55,8 @@ Although this project seems small, I learned a lot!
 For the first time I used styled components and I liked it so much that I think I will be using it in my all React projects from now. Not having to come up with CSS class names is a blessing.  
 To validate the form I used react-hook-form library and once you get a gist of it, it's pretty straight-forward.  
 
-The most important thing I learned is form accessibility. It was tricky to get screen readers to read out validation errors, but thanks to suggestions from mentors I got it to work correctly, once I connected error message to input field.   
+The most important thing I learned is form accessibility. It was tricky to get screen readers to read out validation errors, but thanks to suggestions from mentors I got it to work correctly, once I connected error message to input field.
 This fragment is probably the best and I'm really proud of it. FormField component can be used for different types of input (text, email, password) and will always display/announce correct message.
-
 ```js
 const FormField = React.forwardRef((props, ref) => {
   const isError = () => (props['errors'] ? 'isError' : '')

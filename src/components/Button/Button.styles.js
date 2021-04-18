@@ -13,13 +13,16 @@ export const StyledButton = styled.button`
   text-transform: uppercase;
   box-shadow: inset 0 -4px rgba(0, 0, 0, 0.1);
 
+  :hover,
+  :focus {
+    background-color: ${({ theme }) => lighten(0.1, theme.colors.green)};
+  }
+
   :hover {
     cursor: pointer;
-    background-color: ${({ theme }) => lighten(0.1, theme.colors.green)};
   }
 
   :focus {
     outline: none;
-    background-color: ${({ theme }) => lighten(0.1, theme.colors.green)};
   }
 `

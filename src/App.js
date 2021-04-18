@@ -10,18 +10,16 @@ import bgMobile from './assets/images/bg-intro-mobile.png'
 import bgDesktop from './assets/images/bg-intro-desktop.png'
 
 const Wrapper = styled.div`
-  background: url(${bgMobile});
+  background: url(${bgMobile}) ${({ theme }) => theme.colors.red};
   min-height: 100vh;
   display: flex;
   color: ${({ theme }) => theme.colors.white};
   flex-direction: column;
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.colors.red};
   padding: 1rem;
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.large}) {
-    background: url(${bgDesktop});
-    background-color: ${({ theme }) => theme.colors.red};
+    background: url(${bgDesktop}) ${({ theme }) => theme.colors.red};
   }
 `
 
