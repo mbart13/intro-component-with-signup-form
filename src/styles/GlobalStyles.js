@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 import bgMobile from 'assets/images/bg-intro-mobile.png'
 import bgDesktop from 'assets/images/bg-intro-desktop.png'
+import iconError from 'assets/images/icon-error.svg'
 
 export const GlobalStyles = createGlobalStyle`
   /* Box sizing rules */
@@ -107,7 +108,8 @@ export const GlobalStyles = createGlobalStyle`
       z-index: -1;
       content:
       url(${bgMobile})
-      url(${bgDesktop});
+      url(${bgDesktop})
+      url(${iconError});
     }
   }
 `
